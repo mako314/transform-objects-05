@@ -19,7 +19,6 @@ mesh.position.x = 0.7
 mesh.position.y = -0.6
 mesh.position.z = 1
 
-console.log(mesh.position.length())
 
 /**
  * Sizes
@@ -35,6 +34,9 @@ const sizes = {
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
 camera.position.z = 3
 scene.add(camera)
+
+//Normalize will take vector length and reduce it so it is 1
+mesh.position.normalize()
 
 /**
  * Renderer
