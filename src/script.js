@@ -29,6 +29,11 @@ mesh.scale.set(2, 0.5, 0.5)
 
 // Rotation
 // Half rotations are done with PI, can do it like the number, or do Math.PI. For a full rotation you can do 2 * Math.PI
+// Be careful with rotation axises order. 
+// You can get GIMBAL LOCK if you do rotations strangely and an axis is not working
+// Mess around with ordering 
+// You can use the re-order method below to get it rotating the way you want first
+mesh.rotation.reorder('YXZ')
 mesh.rotation.x = Math.PI * 0.25
 mesh.rotation.y = Math.PI * 0.25
 
@@ -51,6 +56,9 @@ const sizes = {
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
 camera.position.z = 3
 scene.add(camera)
+
+//The lookAt takes a vector three, so while you can't do just mesh, mesh.position is a vector3
+camera.lookAt(mesh.position)
 
 //Normalize will take vector length and reduce it so it is 1
 // mesh.position.normalize()
