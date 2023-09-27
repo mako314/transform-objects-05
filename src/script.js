@@ -21,9 +21,16 @@ scene.add(mesh)
 mesh.position.set(0.7, -0.6, 1)
 
 // Scale
-mesh.scale.x = 2
-mesh.scale.y = 0.5
-mesh.scale.z = 0.5
+// mesh.scale.x = 1
+// mesh.scale.y = 1
+// mesh.scale.z = 1
+mesh.scale.set(2, 0.5, 0.5)
+
+
+// Rotation
+// Half rotations are done with PI, can do it like the number, or do Math.PI. For a full rotation you can do 2 * Math.PI
+mesh.rotation.x = Math.PI * 0.25
+mesh.rotation.y = Math.PI * 0.25
 
 
 // Axes helper
