@@ -23,6 +23,9 @@ scene.add(mesh)
 
 
 
+// Axes helper
+const axesHelper = new THREE.AxesHelper()
+scene.add(axesHelper)
 
 /**
  * Sizes
